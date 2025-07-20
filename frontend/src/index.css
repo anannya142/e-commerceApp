@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins&family=Prata&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.active hr{
+    display: block;
+}
+*{
+    font-family: Outfit;
+}
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+@media(max-width:640px){
+  a.active{
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+   
+    
+  }
+  a.active:hover {opacity: 1}
+
+}
