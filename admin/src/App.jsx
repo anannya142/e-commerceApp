@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 //You can use backendUrl anywhere to make API calls to your backend server.
 
 export const backendUrl= import.meta.env.VITE_BACKEND_URL;
-
+export const currency = '$';
 const App = () => {
 
   //The initial value is taken from localStorage:
@@ -34,16 +34,16 @@ const App = () => {
       {token === ""
       ? <Login setToken={setToken}/>
       : <>
-    <Navbar/>
+    <Navbar setToken={setToken} />
     <hr/>
     <div className='flex w-full'>
       <Sidebar/>
       <div className='w-[70%] mx-auto ml-[max(5vw,25px)] my-8 text-gray-600 text-base' >
 
       <Routes>
-        <Route path='/add' element={<Add/>}/>
-        <Route path='/list' element={< List/>}/>
-        <Route path='/orders' element={<Orders/>}/>
+        <Route path='/add' element={<Add token={token}/>}/>
+        <Route path='/list' element={< List token={token}/>}/>
+        <Route path='/orders' element={<Orders token={token}/>}/>
       </Routes>
       </div>
 
