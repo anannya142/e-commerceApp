@@ -18,9 +18,26 @@ a.active hr{
 ::-webkit-scrollbar{
   display: none;
 }
+/* Your custom button utility */
+@layer utilities {
+  .cosmic-button {
+    @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
+           transition-all duration-300 
+           hover:bg-primary/90 hover:shadow-[0_0_12px_rgba(255,182,193,0.6)]
+           hover:scale-105 active:scale-95;
+  }
+}
+@layer utilities {
+  .clip-hero-shape {
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+
+
 @media(max-width:640px){
   a.active{
-  background-color: #f4511e;
+  background-color: #a97b9c;
   border: none;
   color: white;
   font-size: 16px;
@@ -36,3 +53,4 @@ a.active hr{
   a.active:hover {opacity: 1}
 
 }
+

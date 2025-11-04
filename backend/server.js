@@ -28,5 +28,7 @@ app.use('/api/product', productRouter);
 app.get('/', (req,res) =>{
     res.send("API WORKING")
 })
-
+// app.post("/test-post", (req, res) => {
+//   res.json({ message: "POST request received!" });
+// });
 app.listen(port,() =>console.log('Server started on PORT : ' + port))
