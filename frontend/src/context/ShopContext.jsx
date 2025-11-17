@@ -10,6 +10,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
   const [products, setProducts] = useState([]);
   const currency = "$";
+ 
   const delivery_fee = 10;
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [search, setSearch] = useState("");
@@ -178,7 +179,7 @@ const ShopContextProvider = (props) => {
       // Fetch a single product
   const fetchProduct = async (productId) => {
     try {
-      const res = await axios.get(`${backendUrl}/api/product/${productId}`);
+      const res = await axios.get(`${backendUrl}/api/product/single/${productId}`);
       const product = res.data.product;
 
       setProducts((prev) => {
@@ -198,26 +199,7 @@ const ShopContextProvider = (props) => {
    } 
    
    
-  // ------------------- STRIPE ORDERS -------------------
-  // const createOrder = async (orderData) => {
-  //   if (!token) {
-  //     toast.error("Please login to place order");
-  //     return { success: false, message: "Not authorized" };
-  //   }
-
-  //   try {
-  //     const res = await axios.post(
-  //       backendUrl + "/api/order",
-  //       orderData,
-  //       { headers: getAuthHeaders() }
-  //     );
-  //     return res.data;
-  //   } catch (err) {
-  //     console.error("Stripe order error:", err);
-  //     toast.error("Failed to place order. Login again.");
-  //     return { success: false, message: err.response?.data?.message || "Server error" };
-  //   }
-  // };
+  
   const value = {
     products,
     
@@ -239,6 +221,7 @@ const ShopContextProvider = (props) => {
     setCartItems,
     addReview,
     fetchProduct,
+    
   };
   return (
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>

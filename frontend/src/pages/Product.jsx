@@ -70,6 +70,9 @@ const Product = () => {
 
           <p className="mt-5 text-3xl font-medium">{currency} {productData.price}</p>
           <p className="mt-2 text-gray-500 md:w-4/5">{productData.description}</p>
+           <p className="mt-2 text-gray-500 md:w-4/5"><strong>Only {productData.countInStock} is available!</strong></p>
+           
+    
 
           {/* Sizes */}
           <div className="flex flex-col gap-4 my-8">

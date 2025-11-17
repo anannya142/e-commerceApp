@@ -68,7 +68,12 @@ const onSubmitHandler = async (event) => {
       const response = await axios.post(
         `${backendUrl}/api/order/place`,
         orderData,
-        { headers: { token } }
+        // { headers: { token } }
+        {headers: {
+          authorization: `Bearer ${token}`,
+        }},
+       
+
       );
 
       if (response.data.success) {
@@ -82,7 +87,10 @@ const onSubmitHandler = async (event) => {
       const response = await axios.post(
         `${backendUrl}/api/order/stripe`, // ⚠ Make sure backend route is /stripe
         orderData,
-        { headers: { token } }
+        // { headers: { token } }
+          {headers: {
+          authorization: `Bearer ${token}`,
+        }},
       );
 
       if (response.data.success) {

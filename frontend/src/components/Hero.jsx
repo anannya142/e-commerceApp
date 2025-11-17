@@ -14,10 +14,10 @@ const Hero = () => {
     <div className="relative flex flex-col sm:flex-row items-center justify-between overflow-hidden bg-background">
       
       {/* === Background Shape === */}
-      <div className="absolute right-0 top-0 w-[85%] h-full bg-primary/40 clip-hero-shape"></div>
+      <div className="absolute right-0 top-0 w-[85%] h-full bg-primary/40 clip-hero-shape z-0"></div>
 
       {/* === Left Side (Text) === */}
-      <div className="relative z-10 w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
+      <div className="relative z-0 w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
         <div className="text-[#414141] px-6">
           <div className="flex items-center gap-2">
             <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
@@ -41,11 +41,13 @@ const Hero = () => {
 
       {/* === Right Side (Image) === */}
       <img
-        className="relative z-10 w-full sm:w-1/2"
+        className="relative z-0 w-full sm:w-1/2"
         src={assets.hero_img}
         alt="Hero"
       />
     </div>
+    
+
   );
 };
 
